@@ -1,0 +1,16 @@
+.cardWidget{
+    display: flex;
+    align-items: center;
+    
+}
+
+.cardWidgetLogo{
+    width: 50px;
+    background-color: white;
+    border-radius: 30%;
+}
+
+.carritoItems{
+    color: white;
+    padding-left: 10px;
+}
