@@ -1,0 +1,29 @@
+.header{
+    background-color: black;
+}
+
+.headerContainer{
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo{
+    width: 150px;
+}
+
+.navbar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+
+.navbarItem{
+    font-weight: 700;
+    font-size: 20px;
+    color: white;
+}
