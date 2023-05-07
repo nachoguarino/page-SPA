@@ -1,0 +1,51 @@
+
+[
+    {
+        "id":1 ,
+        "nombre":"remera oversize negra" ,
+        "categoria":"remeras" ,
+        "precio": 5000 ,
+        "descripcion":"remera corte oversize 100% algodon, logo lowkeyclub",
+        "img": "https://d3ugyf2ht6aenh.cloudfront.net/stores/001/966/536/products/1024x1024-21-b321421924a8680bc316440191914454-640-0.webp"  
+    },
+    {
+        "id":2 ,
+        "nombre": "remera oversize blanca" ,
+        "categoria":"remeras" ,
+        "precio": 5000 ,
+        "descripcion":"remera corte oversize 100% algodon, logo lowkeyclub",  
+        "img": "https://d3ugyf2ht6aenh.cloudfront.net/stores/001/966/536/products/1024x1024-11-8c9f5aa3166e4aab4016440190858656-1024-1024.webp"
+    },
+    {
+        "id":3 ,
+        "nombre": "hoodie oversize negro",
+        "categoria":"hoodies",
+        "precio": 15000 ,
+        "descripcion":"hoodie corte oversize 100% algodon, logo lowkeyclub",
+        "img" :"https://d3ugyf2ht6aenh.cloudfront.net/stores/001/966/536/products/hoodie-rustico-web-negro_mesa-de-trabajo-11-5b6abbc9f0f721730316713036963441-1024-1024.webp"
+    },
+    {
+        "id":4 ,
+        "nombre": "hoodie oversize gris" ,
+        "categoria":"hoodies",
+        "precio": 15000 ,
+        "descripcion":"hoodie corte oversize 100% algodon, logo lowkeyclub", 
+        "img":"https://d3ugyf2ht6aenh.cloudfront.net/stores/001/966/536/products/buzo-oversize-gris-melagne-web_mesa-de-trabajo-11-b67763fbeaa83b976716791623047441-480-0.webp"
+    },
+    {
+        "id":5 ,
+        "nombre": "short negro" ,
+        "categoria":"shorts" ,
+        "precio": 6000 ,
+        "descripcion":"shorts temporada verano, 100% algodon, made in lowkeyclub labs",
+        "img": "https://d2r9epyceweg5n.cloudfront.net/stores/001/111/553/products/701-7725d8d287e41a51c615928544220002-1024-1024.png"
+    },
+    {
+        "id":6 ,
+        "nombre": "short blanco" ,
+        "categoria":"shorts" ,
+        "precio": 6000 ,
+        "descripcion":"shorts temporada verano, 100% algodon, made in lowkeyclub labs",
+        "img":"https://http2.mlstatic.com/D_NQ_NP_950800-MLA43961691332_102020-V.jpg"
+    }
+]
