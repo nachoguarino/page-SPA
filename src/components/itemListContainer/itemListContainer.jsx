@@ -2,7 +2,7 @@
 import { Component, PureComponent, useEffect, useState } from 'react'
 import { pedirDatos } from '../../helpers/PedirDatos'
 import ItemList from '../ItemList/ItemList'
-import { useParams,useSearchParams } from 'react-router-dom'
+import { useParams, useSearchParams } from 'react-router-dom'
 
 export const ItemListContainer = () =>{
 
@@ -26,8 +26,8 @@ useEffect(() => {
                 }
                 
             })
-            .catch((err) => console.log(err))
-            .finally (() => setLoading(false))
+            .catch( (err) => console.log(err) )
+            .finally( () => setLoading(false) )
     }, [categoriaId])
 
 const listado = search

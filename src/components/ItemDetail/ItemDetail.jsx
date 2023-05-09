@@ -20,7 +20,7 @@ const ItemDetail = ({item}) => {
                 setCantidad={setCantidad}
                 cantidad={cantidad}
             />
-            <button onClick={handleAgregar} className="btn btn-primary">Agregar al carrito</button>
+            <button onClick={handleAgregar} className="btn btn-dark">Agregar al carrito</button>
         </div>
     )
 }

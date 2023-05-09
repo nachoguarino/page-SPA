@@ -12,9 +12,9 @@ export const ItemCounter = ({stock, setCantidad, cantidad}) => {
 
     return 	(	
         <div>
-            <button onClick={handleRestar} className="btn btn-outline-primary">-</button>
+            <button onClick={handleRestar} className="btn btn-outline-dark my-2">-</button>
             <span className="mx-2"> {cantidad} </span>
-            <button onClick={handleSumar} className="btn btn-primary">+</button>
+            <button onClick={handleSumar} className="btn btn-dark my-2">+</button>
         </div>
     ) 	}
 
