@@ -8,12 +8,12 @@ export const NavBar = () => {
         <header className='header'>
             <div className='headerContainer'>
 
-                <img src={'/imagenes/lwklogo.png'}  className="logo" alt="LOGO" />
+                <Link to='/'><img src={'/imagenes/lwklogo.png'} className="logo" alt="LOGO"/></Link> 
 
                 <nav className="navbar">
-                    <Link><h3 className="navbarItem">Remeras</h3></Link>
-                    <Link><h3 className="navbarItem">Hoodies</h3></Link>
-                    <Link><h3 className='navbarItem'>Shorts</h3></Link>
+                    <Link to='/productos/remeras' className="navbarItem">Remeras</Link>
+                    <Link to='/productos/hoodies' className="navbarItem">Hoodies</Link>
+                    <Link to='/productos/shorts'  className='navbarItem'>Shorts</Link>
                 </nav>
                 
                 <CartWidget />

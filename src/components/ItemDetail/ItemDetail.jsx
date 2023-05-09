@@ -1,16 +1,27 @@
+import { useState } from "react"
+import { ItemCounter } from "../ItemCounter/ItemCounter"
 
 const ItemDetail = ({item}) => {
 
+    const [cantidad, setCantidad] = useState(1)
+
+    const handleAgregar = () =>{
+        console.log({...item, cantidad })
+    }
     return (
         <div>
-        <h3>{item.nombre}</h3>
-        <img src={item.img} alt={item.nombre}/>
-        <p>{item.descripcion}</p>
-        <p>Categoria {item.categorias}</p>
-        <p><strong>Precio: ${item.precio}</strong></p>
+            <h3>{item.nombre}</h3>
+            <img src={item.img} alt={item.nombre}/>
+            <p>{item.descripcion}</p>
+            <h4><strong>Precio: ${item.precio * cantidad}</strong></h4>
 
-        <button className="btn btn-primary">Agregar al carrito</button>
-    </div>
+            <ItemCounter
+                stock= {item.stock}
+                setCantidad={setCantidad}
+                cantidad={cantidad}
+            />
+            <button onClick={handleAgregar} className="btn btn-primary">Agregar al carrito</button>
+        </div>
     )
 }
 

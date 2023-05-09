@@ -1,4 +1,4 @@
-import './itemListContainer.css'
+
 import { Component, PureComponent, useEffect, useState } from 'react'
 import { pedirDatos } from '../../helpers/PedirDatos'
 import ItemList from '../ItemList/ItemList'
@@ -7,28 +7,28 @@ import { useParams,useSearchParams } from 'react-router-dom'
 export const ItemListContainer = () =>{
 
 const [productos, setProductos] = useState([])
-const [loading,setLoading] = useState(true)
+const [loading, setLoading] = useState(true)
 const [searchParams] = useSearchParams()
 
 const search = searchParams.get ('search')
 
-const {categoryId} = useParams()
+const {categoriaId} = useParams()
 
 useEffect(() => {
         setLoading(true)
 
         pedirDatos()
             .then ((data) =>{
-                if (!categoryId){
+                if (!categoriaId){
                     setProductos(data)
                 } else {
-                    setProductos (data.filter((el) => el.category === categoryId) )
+                    setProductos (data.filter((el) => el.categoria === categoriaId) )
                 }
                 
             })
             .catch((err) => console.log(err))
             .finally (() => setLoading(false))
-    }, [categoryId])
+    }, [categoriaId])
 
 const listado = search
                     ? productos.filter((el) => el.nombre.toLowerCase().includes(search.toLowerCase() ) )
