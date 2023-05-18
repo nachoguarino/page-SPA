@@ -3,6 +3,8 @@ import { Component, PureComponent, useEffect, useState } from 'react'
 import { pedirDatos } from '../../helpers/PedirDatos'
 import ItemList from '../ItemList/ItemList'
 import { useParams, useSearchParams } from 'react-router-dom'
+import {collection, getDocs, query, where} from 'firebase/firestore'
+import {dataBase} from '../../firebase/config'
 
 export const ItemListContainer = () =>{
 
@@ -10,29 +12,33 @@ const [productos, setProductos] = useState([])
 const [loading, setLoading] = useState(true)
 const [searchParams] = useSearchParams()
 
-const search = searchParams.get ('search')
-
 const {categoriaId} = useParams()
 
 useEffect(() => {
         setLoading(true)
 
-        pedirDatos()
-            .then ((data) =>{
-                if (!categoriaId){
-                    setProductos(data)
-                } else {
-                    setProductos (data.filter((el) => el.categoria === categoriaId) )
-                }
+        //FIRESTORE
+        //armar la referencia
+        const productosRef = collection(dataBase, "productos")
+        const q = categoriaId ?
+                            query(productosRef, where("categoria", "==", categoriaId))
+                            : productosRef
+        // consumir la referencia(async)
+        getDocs(q)
+            .then((res) =>{
+                const docs = res.docs.map((doc) =>{
+                    return{
+                        ...doc.data(),
+                        id: doc.id
+                    }
+                })
+                setProductos(docs)
                 
+
             })
-            .catch( (err) => console.log(err) )
-            .finally( () => setLoading(false) )
+            .finally (() => setLoading(false))
     }, [categoriaId])
 
-const listado = search
-                    ? productos.filter((el) => el.nombre.toLowerCase().includes(search.toLowerCase() ) )
-                    : productos
 
 
     return (
@@ -40,7 +46,7 @@ const listado = search
             {
             loading
                 ? <h2>Cargando...</h2>
-                : <ItemList items={listado}/>
+                : <ItemList items={productos}/>
             }
         </div>
     )

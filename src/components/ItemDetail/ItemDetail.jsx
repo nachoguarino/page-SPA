@@ -6,7 +6,6 @@ const ItemDetail = ({item}) => {
     const [cantidad, setCantidad] = useState(1)
 
     const handleAgregar = () =>{
-        console.log({...item, cantidad })
     }
     return (
         <div>
