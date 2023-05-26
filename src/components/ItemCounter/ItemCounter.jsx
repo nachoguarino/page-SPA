@@ -1,4 +1,4 @@
-export const ItemCounter = ({stock, setCantidad, cantidad}) => {
+export const ItemCounter = ({stock, setCantidad, cantidad, agregar}) => {
 
 
         const handleRestar = () =>{
@@ -11,10 +11,30 @@ export const ItemCounter = ({stock, setCantidad, cantidad}) => {
 
 
     return 	(	
-        <div>
-            <button onClick={handleRestar} className="btn btn-outline-dark my-2">-</button>
-            <span className="mx-2"> {cantidad} </span>
-            <button onClick={handleSumar} className="btn btn-dark my-2">+</button>
+        <div className="container m-1">
+            <div className="container mx-3">
+                <button 
+                    onClick={handleRestar} 
+                    className={`btn my-2 ${cantidad === 1 ? "boton" : ''} ${cantidad === 1 ? "btn-outline-danger" : "btn btn-outline-dark"}`} 
+                    disabled ={cantidad === 1}
+                    >
+                        -
+                </button>
+
+                <span className="mx-2"> {cantidad} </span>
+
+                <button 
+                    onClick={handleSumar} 
+                    className={cantidad === stock ? "btn my-2 btn-danger": "btn my-2 btn-dark"}
+                    disabled = {cantidad === stock}
+                    >
+                        +
+                </button>
+            </div>
+
+            <div>
+                <button onClick={agregar} className="btn btn-dark m-1">Agregar al Carrito</button>
+            </div>
         </div>
     ) 	}
 
