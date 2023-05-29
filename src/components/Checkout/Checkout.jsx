@@ -2,7 +2,7 @@ import { useContext } from "react"
 import { useState } from "react"
 import {  Navigate } from "react-router-dom"
 import { collection, writeBatch, query, where, documentId, getDocs, addDoc, doc, getDoc } from 'firebase/firestore'
-import { dataBase } from '../../firebase/config'
+import { auth, dataBase } from '../../firebase/config'
 import { Link } from 'react-router-dom'
 import { CartContext } from "../../context/CartContext"
 import { Formik, Form, Field, ErrorMessage } from "formik"
@@ -23,6 +23,7 @@ const schema = Yup.object().shape({
 })
 
 export const Checkout = () => {
+
 
     const {cart, totalCompra, emptyCart} = useContext(CartContext)
 
@@ -95,8 +96,10 @@ export const Checkout = () => {
 
 
     return 	(
-        <div className="container my-5">
+        <div className="container my-5 justify-content-center">
             <h2>Checkout</h2>
+            <p> Ingrese sus datos de Envio</p>
+            <hr />
 
             <Formik
                 initialValues ={{
