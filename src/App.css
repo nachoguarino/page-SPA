@@ -3,3 +3,9 @@
     padding: 0px;
     box-sizing: border-box;
 }
+
+.img-ropa{
+    width: 50%;
+    aspect-ratio: 4/4;
+    object-fit: contain;
+}

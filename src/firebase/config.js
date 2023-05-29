@@ -1,6 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import {getFirestore} from 'firebase/firestore'
+import { getAuth, GoogleAuthProvider } from 'firebase/auth'
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
     apiKey: "AIzaSyB3QUdkJb5laf4c7GBV2lbLwXSp2khiHsA",
@@ -15,3 +16,5 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 export const dataBase = getFirestore(app)
+export const auth =getAuth(app)
+export const provider = new GoogleAuthProvider()

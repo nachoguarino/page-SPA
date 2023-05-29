@@ -5,7 +5,7 @@ const ItemCard = ({item}) => {
 
     return(
         <div className='col-3 m-2'>
-        <h3>{item.nombre}</h3>
+        <h3 className='p-2'>{item.nombre}</h3>
         <img className="img-ropa" src={item.img} alt={item.nombre}/>
         <p>{item.descripcion}</p>
         <p>Categoria: {item.categoria}</p>

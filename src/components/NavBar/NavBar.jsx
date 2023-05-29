@@ -17,6 +17,10 @@ export const NavBar = () => {
                 </nav>
                 
                 <CartWidget />
+                <div>
+                    <p>{user.email}</p>
+                    <button className='btn btn-outline-dark' onClick={logout}>Cerrar sesion</button>
+                </div>
             </div>
         </header>
     )
